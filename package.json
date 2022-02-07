@@ -1,0 +1,66 @@
+{
+  "name": "react-create-theme-context",
+  "version": "0.0.1",
+  "description": "Polyfill for the proposed React context API",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "repository": "https://github.com/blencm/react-create-theme-context",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "context",
+    "contextTypes",
+    "polyfill",
+    "ponyfill"
+  ],
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "jest",
+    "flow": "flow",
+    "format": "prettier --write '**/*.{js,md,json,js.flow,d.ts}'",
+    "build": "babel src -d lib --copy-files --ignore __tests__",
+    "prepublish": "yarn build",
+    "commit": "lint-staged"
+  },
+  "dependencies": {
+    "gud": "^1.0.0",
+    "warning": "^4.0.3"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.8.1",
+    "react": "^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-add-module-exports": "^1.0.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.11.0",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
+    "enzyme-to-json": "^3.6.2",
+    "flow-bin": "^0.171.0",
+    "husky": "^7.0.4",
+    "jest": "^27.5.0",
+    "lint-staged": "^12.3.3",
+    "prettier": "^2.5.1",
+    "prop-types": "^15.8.1",
+    "raf": "^3.4.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "lint-staged": {
+    "*.{js,md,json,js.flow,d.ts}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  }
+}
